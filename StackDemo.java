@@ -7,7 +7,9 @@ class StackRunner
         num.push(30);
         num.push(56);
 
-
+        System.out.println(num.pop());
+        System.out.println(num.peek());
+        System.out.println(num.pop());
 
 
 
@@ -29,7 +31,23 @@ public class StackDemo {
         top++;
     }
 
+    public int pop()
+    {
+        int data;
+        top --;
+        data = stack[top];
+        stack[top] = 0;
+        return data;
 
+    }
+
+    public int peek()
+    {
+        int data;
+        data = stack[top-1];
+        return data;
+
+    }
 
     public void show()
     {
