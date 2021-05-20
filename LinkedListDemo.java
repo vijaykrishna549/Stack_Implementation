@@ -18,6 +18,11 @@ class Node {
         llist.InsertAt(1,30);
         llist.InsertAt(2,40);
 
+        llist.deleteAt(0);
+        llist.deleteAt(2);
+        llist.deleteAt(1);
+
+
         llist.show();
 
 
@@ -54,6 +59,7 @@ public class LinkedListDemo {
         node.data = data;
         node.next = null;
 
+
         Node n = head;
         for (int i =0; i<index-1;i++)
         {
@@ -62,7 +68,26 @@ public class LinkedListDemo {
         node.next = n.next;
         n.next = node;
 
+    }
 
+    public void deleteAt(int index)
+    {
+       if (index == 0)
+       {
+           head = head.next;
+       }
+       else
+       {
+           Node n = head;
+           Node n1 = null;
+           for (int i=0; i<index-1;i++)
+           {
+              n = n.next;
+           }
+           n1 = n.next;
+           n.next = n1.next;
+         
+       }
     }
 
 
